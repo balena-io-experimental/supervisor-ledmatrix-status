@@ -1,5 +1,11 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-alpine-node:slim
 
+# install apk dependencies
+RUN apk add --update \
+  python-dev   \
+  i2c-tools && \
+  rm -rf /var/cache/apk/*
+
 # Save source folder
 RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
 
