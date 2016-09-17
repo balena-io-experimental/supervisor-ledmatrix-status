@@ -34,6 +34,9 @@
   "homepage": "https://github.com/resin-io-playground/supervisor-ledmatrix-status#readme",
   "dependencies": {
     "8x8matrix": "0.0.1",
+    "debug": "^2.2.0",
+    "random-int-array": "^1.0.0",
+    "request": "^2.74.0",
     "rpio": "^0.9.12"
   }
 }
