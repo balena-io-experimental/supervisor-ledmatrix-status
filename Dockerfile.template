@@ -3,6 +3,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-alpine-node:slim
 # install apk dependencies
 RUN apk add --update \
   --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+  build-base \
   python-dev   \
   i2c-tools && \
   rm -rf /var/cache/apk/*
