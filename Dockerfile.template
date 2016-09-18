@@ -1,12 +1,13 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-alpine-node:slim
+FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
 
-# install apk dependencies
-RUN apk add --update \
-  --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
-  build-base \
+# Install apt deps
+RUN apt-get update && apt-get install -y \
+  build-essential \
   python-dev   \
+  python-smbus \
+  python-imaging \
   i2c-tools && \
-  rm -rf /var/cache/apk/*
+  rm -rf /var/lib/apt/lists/*
 
 # Save source folder
 RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
