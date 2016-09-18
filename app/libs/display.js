@@ -2,8 +2,7 @@
 
 {
     'use strict';
-    const rpio = require('rpio');
-    const matrix = require('8x8matrix');
+    const matrix = require(__dirname+'/ht16k33.js');
     const randomIntArray = require('random-int-array');
 
     let display = function() {
@@ -127,7 +126,7 @@
 
     display.prototype.init = function(callback) {
         let self = this;
-        matrix.init(rpio);
+        matrix.init();
         callback();
     };
     display.prototype.image = function(img) {
